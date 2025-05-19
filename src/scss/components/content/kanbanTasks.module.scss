@@ -1,0 +1,79 @@
+@use '../../helpers' as *;
+
+%different-colors-priority{
+  &[data-priority='medium']{
+    background-color: var(--color-kanban-tasks-priority-medium-background) ;
+    color: var(--color-kanban-tasks-priority-medium-text);
+  }
+  &[data-priority='high']{
+    background-color: var(--color-kanban-tasks-priority-high-background) ;
+    color: var(--color-kanban-tasks-priority-high-text);
+  }
+  &[data-priority='completed']{
+    background-color: var(--color-kanban-tasks-priority-completed-background);
+    color: var(--color-kanban-tasks-priority-completed-text);
+  }
+}
+
+.dropZone{
+  @extend .taskItem;
+  @include fluid-text(16, 16);
+
+  color: cadetblue;
+  text-align: center;
+  border: rem(2) dashed rgba(rgb(83, 143, 145),0.3);
+  border-radius: rem(8) !important;
+  padding-inline: rem(5)!important;
+  padding-block: rem(5)!important;
+}
+
+.taskItem {
+  border-radius: rem(20);
+  background-color: var(--color-theme-light);
+  padding-inline: rem(20);
+  padding-block: rem(20);
+  margin-bottom: rem(25);
+  
+  .taskControl {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas: "left right";
+    justify-content: space-between;
+    margin-bottom: rem(14);
+
+    .taskPriority {
+      @include fluid-text(18,16);
+
+      grid-area: left;
+      background-color: var(--color-kanban-tasks-priority-low-background) ;
+      color: var(--color-kanban-tasks-priority-low-text);
+      font-weight: 500;
+      padding: rem(2) rem(14);
+      border-radius: rem(16);
+      // text-transform: uppercase;
+
+      @extend %different-colors-priority;
+    }
+
+    .editTaskButton {
+      border: none;
+      background-color: transparent;
+
+      .editTask {
+        grid-area: right;
+      }
+    }
+  }
+
+
+  .taskTitle {
+    @include fluid-text(22, 16);
+
+    margin-bottom: rem(6);
+  }
+
+  .taskText {
+    @include fluid-text(19, 16);
+    color: var(--color-kanban-tasks-content-text);
+  }
+}

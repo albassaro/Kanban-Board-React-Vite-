@@ -1,0 +1,191 @@
+@use '../../helpers' as *;
+
+// Общие стили 
+
+fieldset{
+  border: rem(3) solid var(--color-modal-input-border);
+  border-radius: rem(5);
+  margin-top: rem(25);
+
+  &>legend{
+    @include fluid-text(24,14);
+
+    margin-left: rem(5);
+    
+  }
+}
+
+
+
+
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  background-color: var(--color-modal-fullpage-background);
+
+  .wrapper {
+    @include container-limit(1000,40);
+
+    min-width: rem(800);
+    padding-block: rem(30);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 15;
+    background-color: var(--color-modal-background);
+    border-radius: rem(20);
+
+    .content {
+      
+      .modalTitle {
+        @include fluid-text(32, 18);
+
+        margin-bottom: rem(20);
+        font-weight: 400;
+      }
+
+      .taskManagementForm {
+        display: flex;
+        flex-direction: column;
+
+        
+        .error{
+          @include fluid-text(17,16);
+          color: tomato;
+          margin-left: rem(18);
+        }
+
+
+        .titleInput{
+          @include fluid-text(18,16);
+
+          width: 100%;
+          border: none;
+          outline: none;
+
+          &::placeholder{
+            color: var(--color-modal-input-border);
+          }
+        }
+
+        .taskDescription{
+          @include fluid-text(18, 18);
+
+          border: none;
+          outline: none;
+          width: 100%;
+          height: 100%;
+          resize: none;
+
+          &::placeholder{
+            color: var(--color-modal-input-border);
+          }
+        }
+
+        .taskPriority{
+          display: flex;
+          flex-wrap: wrap;
+          margin-left: rem(15);
+          margin-top: rem(25);
+          
+
+          .taskPriorityTitle{
+            @include fluid-text(24,16);
+            width: 100%;
+            margin-bottom: rem(10);
+          }
+
+          .taskPriorityItem{
+            display: flex;
+            margin-right: rem(25);
+
+            &>input[type = radio]{
+              display: none;
+            }
+
+            &>label{
+              @include fluid-text(19, 16);
+
+              padding: rem(1) rem(12);
+              border-radius: rem(16);
+              // text-transform: uppercase;
+              
+
+              &:hover{
+                cursor: pointer;
+              }
+            }
+
+            .highPriority{
+              color: var(--color-modal-taskManagement-priority-high-text);
+              border: rem(3) solid var(--color-modal-taskManagement-priority-high-border);
+              
+            }
+            .mediumPriority{
+              color: var(--color-kanban-tasks-priority-medium-text);
+              border: rem(3) solid var(--color-modal-taskManagement-priority-medium-border);
+            }
+            .lowPriority{
+              color: var(--color-modal-taskManagement-priority-low-text);
+              border: rem(3) solid var(--color-modal-taskManagement-priority-low-border);
+            }
+
+
+            /* КОГДА НАЖАТО */
+            &>input[id= highPriority]:checked + .highPriority{
+              color: var(--color-modal-taskManagement-priority-text-checked);
+              background-color: var(--color-modal-taskManagement-priority-high-background);
+            }
+            &>input[id= mediumPriority]:checked + .mediumPriority{
+              color: var(--color-modal-taskManagement-priority-text-checked);
+              background-color: var(--color-modal-taskManagement-priority-medium-background);
+            }
+            &>input[id= lowPriority]:checked + .lowPriority{
+              color: var(--color-modal-taskManagement-priority-text-checked);
+              background-color: var(--color-modal-taskManagement-priority-low-background);
+            }
+          }
+
+        }
+
+        .modalButtons{
+          display: flex;
+          justify-content: end;
+          gap: rem(50);
+          margin-top: rem(50);
+
+          &>button{
+            @include fluid-text(20,16);
+
+
+            padding: rem(8) rem(16);
+            border-radius: rem(20);
+            border: none;
+            color: var(--color-general-light);
+          }
+
+          .createTaskButton{
+            background-color: var(--color-modal-taskManagement-button-background);
+
+            &:hover{           
+              background-color: var(--color-modal-taskManagement-button-background-hover);          
+            }
+          }
+          .cancelTaskButton{
+            background-color: var(--color-modal-taskManagement-cancel-button-background);
+            
+            &:hover{           
+              background-color: var(--color-modal-taskManagement-cancel-button-background-hover);          
+            }
+          }
+        }
+      }
+    }
+  }
+}

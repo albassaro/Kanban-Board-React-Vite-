@@ -1,0 +1,25 @@
+@use 'sass:math';
+@use 'functions' as *;
+
+
+@mixin fluid-text($max: 30, $min: 16) {
+  font-size: fluid($max,$min);
+}
+
+// ограничение ширины контентной части (либо указываются единицы измерения для 2 значений либо ни для одного)
+@mixin container-limit($container-width: 1920, $container-padding-x: 32){
+  @if ((math.is-unitless($container-width)) and (math.is-unitless($container-padding-x))){
+    max-width: calc(#{rem($container-width)} + (#{rem($container-padding-x)} * 2));
+    padding-inline: #{rem($container-padding-x)};
+  }@else{
+    max-width: calc($container-width + ($container-padding-x * 2));
+    padding-inline: $container-padding-x;
+  }
+
+  margin-inline: auto;  
+}
+
+@mixin background-opacity($color, $opacity: 0.5){
+  
+  background-color: rgba(hex-to-rgb($color), $opacity);
+}

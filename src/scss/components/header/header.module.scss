@@ -1,0 +1,50 @@
+@use '../../helpers' as *;
+
+
+.container{
+  @include container-limit(100vw, rem(32));
+  @include fluid-text(24,16);
+  
+  display: flex;
+  flex-direction: column;
+  gap: rem(50);
+  border-bottom: rem(4) solid var(--color-header-border);
+  background-color: var(--color-header-background);
+
+  .content{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: rem(25);
+    
+    .logo{
+      border: none;
+      background-color: transparent; 
+    }
+    .greeting{
+      @include fluid-text(28,14);
+    }
+
+    .menu{
+      @include fluid-text(18,14);
+    }
+
+    .user{
+      display: flex;
+      gap: rem(25);
+      align-items: center;
+
+      
+      .userName{
+        @include fluid-text(16,14);
+      }
+
+      .userStatus{
+        @include fluid-text(16,14);
+      }
+    }
+  }
+}
+
+

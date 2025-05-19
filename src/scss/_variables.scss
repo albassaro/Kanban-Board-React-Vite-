@@ -1,0 +1,175 @@
+@use './helpers' as *;
+
+// ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ
+:root{
+
+
+  // Общие цвета
+  --color-general-light:#FFFFFF; 
+  --color-general-dark:#292B31; 
+
+
+
+
+  // цвета тем
+  --color-theme-light: #FFFFFF;
+  --color-theme-dark: #292B31;
+
+
+
+
+
+  // цвета шапки
+  --color-header-background: #F8FAFC;
+  --color-header-border: #E2E8F0;
+
+
+
+  //цвет фильтра задач на странице
+  --color-kanban-filters-select-background: #{rgba(#171c29, 0.4)};
+
+  // цвета колонок канбан доски
+  --color-kanban-columns-title-todo: #5030E5;
+  --color-kanban-columns-title-todo-tasks-count: #{rgba(#5030E5,0.4)};
+  --color-kanban-columns-title-in-progress: #FFA500;
+  --color-kanban-columns-title-in-progress-tasks-count: #{rgba(#FFA500,0.5)};
+  --color-kanban-columns-title-done: #8BC48A;
+  --color-kanban-columns-title-done-tasks-count: #{rgba(#8BC48A,0.5)};
+
+
+
+
+  // цвет фона колонок канбан доски
+  --color-kanban-columns-background: #F5F5F5;
+  
+
+  
+
+
+  // цвет приоритета у задач 
+
+  --color-kanban-tasks-priority-low-background: #{rgba(#2BA700, 0.28)};
+  --color-kanban-tasks-priority-low-text: #1f7900;
+  --color-kanban-tasks-priority-medium-background: #{rgba(#3B82F6, 0.2)};
+  --color-kanban-tasks-priority-medium-text: #2563EB;
+  --color-kanban-tasks-priority-high-background: #{rgba(#D8727D, 0.3)};
+  --color-kanban-tasks-priority-high-text: #cc4d59;
+  --color-kanban-tasks-priority-completed-background: #{rgba(#FFCB33, 0.3)};
+  --color-kanban-tasks-priority-completed-text: #af7802;
+
+  --color-kanban-tasks-content-text: #787486;
+  
+  
+
+
+
+  // цвет фона модального окна
+  --color-modal-fullpage-background: #{rgba(#292B31,0.75)};
+  --color-modal-background: #FFFFFF;
+
+  --color-modal-input-border: #C4C4C4;
+
+
+
+
+  // Цвет приоритета кнопок при создании/изменении задач
+
+  --color-modal-taskManagement-priority-text-checked: var(--color-general-light);
+
+
+
+  --color-modal-taskManagement-priority-high-text: #D8727D;
+  --color-modal-taskManagement-priority-high-border: #D8727D;
+  --color-modal-taskManagement-priority-high-background: #{rgba(#D8727D, 0.7)};
+  
+  --color-modal-taskManagement-priority-medium-text: #2563EB;
+  --color-modal-taskManagement-priority-medium-border: #2563EB;
+  --color-modal-taskManagement-priority-medium-background: #{rgba(#3B82F6, 0.7)};
+  
+  --color-modal-taskManagement-priority-low-text: #2BA700;
+  --color-modal-taskManagement-priority-low-border: #2BA700;
+  --color-modal-taskManagement-priority-low-background: #{rgba(#2BA700, 0.6)};
+
+
+
+
+  // Цвет кнопок создания/отмены на модальном окне
+
+  --color-modal-taskManagement-button-background: #{rgba(rgb(8, 177, 228), 1)};
+  --color-modal-taskManagement-button-background-hover: #{rgba(#5570F1, 0.75)};
+  --color-modal-taskManagement-button-border: #{rgba(#292B31, 0.3)};
+
+  --color-modal-taskManagement-cancel-button-background: #{rgba(#929cac, 0.8)};
+  --color-modal-taskManagement-cancel-button-background-hover: #{rgba(#6e7683, 0.75)};
+
+  
+
+
+  // шрифт
+  --font-family-base: 'Plus Jakarta Sans', sans-serif;
+
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

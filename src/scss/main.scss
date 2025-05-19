@@ -1,0 +1,23 @@
+@use 'normalize.scss';
+@use 'fonts.scss';
+@use 'variables.scss';
+
+
+
+body{
+  font-family: var(--font-family-base);
+}
+
+body:has(#modal){
+  overflow: hidden;
+  
+}
+
+
+
+
+
+
+
+
+

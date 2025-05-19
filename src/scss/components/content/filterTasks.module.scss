@@ -1,0 +1,21 @@
+@use '../../helpers' as *;
+
+.filters{
+  border-bottom: rem(2) solid var(--color-header-border);
+  
+  .filtersSubtitle{
+    @include fluid-text(20,18);
+
+    font-weight: 500;
+  }
+  .prioritySelect{
+    width: f;
+    border: none;
+    padding: rem(6) rem(8) rem(6) rem(12);
+    border-radius: rem(5);
+    background-color: var(--color-kanban-filters-select-background);
+    color: var(--color-general-light);
+    -moz-appearance: none;
+    outline: none;
+  }
+}
