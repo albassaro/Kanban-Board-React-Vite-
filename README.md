@@ -1,12 +1,32 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Описание
+Личный тестовый проект kanban-доски(с упрощенным функционалом) созданный чтобы попробовать tanstack query и сравнить с rtk query.
 
-Currently, two official plugins are available:
+В этом проекте реализована идея kanban-доски, поэтому полный функционал не предусмотрен(авторизация, разделение прав и т.п.).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+В качестве отправки запросов используется эмитация через setTimeout. 
 
-## Expanding the ESLint configuration
+Данные хранятся в local storage для удобства.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Стили писал через scss модули с использование структуры общих стилей, миксинов и функций.
+
+# Состояние проекта
+Т.к. делал я его больше для себя, то возможно некоторый функционал так и не будет реализован, т.к. его описание без state-менеджеров смысла особого не имеет, а цель проекта -  попробовать tanstack query на небольшом и не очень сложном примере приложения
+
+Пока что это первая версия (реализован базовый функционал без сложных манипуляций с данными). Возможно в будущем добавлю более сложный функционал(дату и время для постов, авторизацию/аутентификацию, админ панель/права админа и т.д.).
+
+
+
+# Используемые библиотеки
+- react + vite сборка
+- tanstack query
+- scss пропроцессор
+- uuid
+- react-hook-form
+
+# Цели
+- создать базовый функционал kanban-доски с созданием, удалением, редактированием и поиском/фильтром задач (попробовать кеширование запросов и мутации tanstack query)
+- т.к. tanstack query не очень взаимодействует с redux, обойтись без использования state-менеджеров (redux и т.п.) и посмотреть что получится из этого
+- попробовать и оценить для себя разницу между tanstack query и rtk query в плане простоты и удобства использования и предоставляемого функционала для несложных проектов, не зависящих от сложных состояний и прочего.
+
+
